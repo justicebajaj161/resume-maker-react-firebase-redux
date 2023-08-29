@@ -315,12 +315,25 @@ describe('Posting Details and Rendering in Resume', () => {
     loginUser();
   });
 
-  it('details should consist of inputs', () => {
+  it('details should consist of  objective input', () => {
     cy.get('textarea[name="objective"]').should('be.visible');
+   
+  });
+   it('details should consist of experience input', () => {
+   
     cy.get('textarea[name="experience"]').should('be.visible');
+ 
+  });
+   it('details should consist of education input', () => {
+
     cy.get('textarea[name="education"]').should('be.visible');
+   
+  });
+   it('details should consist of skills input', () => {
+
     cy.get('textarea[name="skills"]').should('be.visible');
   });
+
 
   it('should post user details', () => {
     enterAndSubmitDetails();
