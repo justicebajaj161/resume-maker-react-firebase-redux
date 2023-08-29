@@ -1,0 +1,53 @@
+.name-n-slogan-container i{
+    font-size: 6rem;
+    border: 3px solid lightgoldenrodyellow;
+    padding:2rem;
+    
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.7);
+    transition: 1s all linear;
+    animation-name:glow; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* ! css animation */
+
+@keyframes glow{
+
+    
+    0% {
+        box-shadow: 0px 0px 190px 0px lightgoldenrodyellow;
+    }
+    
+    15%{
+        box-shadow: 0px 0px 190px 80px lightgoldenrodyellow;
+        
+    }
+    
+    20%{
+        box-shadow: 0px 0px 190px 80px lightgoldenrodyellow;
+
+    }
+    
+    25%{
+        box-shadow: 0px 0px 190px 80px lightgoldenrodyellow;
+        
+    }
+    50%{
+        box-shadow: 0px 0px 190px 80px lightgoldenrodyellow;
+        
+    }
+    75%{
+        
+        box-shadow: 0px 0px 190px 0px lightgoldenrodyellow;
+    }
+    100%{
+        box-shadow: 0px 0px 190px 0px lightgoldenrodyellow;
+        /* ! spin anti clockwise at the end with -360deg */
+        /* rotate: 360deg; */
+        
+    }
+    
+   
+}
