@@ -315,23 +315,30 @@ describe('Posting Details and Rendering in Resume', () => {
     loginUser();
   });
 
-  it('details should consist of  objective input', () => {
+  it('details should consist of  objective textarea', () => {
     cy.get('textarea[name="objective"]').should('be.visible');
    
   });
-   it('details should consist of experience input', () => {
+   it('details should consist of experience textarea', () => {
    
     cy.get('textarea[name="experience"]').should('be.visible');
  
   });
-   it('details should consist of education input', () => {
+   it('details should consist of education textarea', () => {
 
     cy.get('textarea[name="education"]').should('be.visible');
    
   });
-   it('details should consist of skills input', () => {
+   it('details should consist of skills textarea', () => {
 
     cy.get('textarea[name="skills"]').should('be.visible');
+   
+  });
+  it('details should consist file input', () => {
+
+   
+    cy.get('input[type="file"]').should('exist')
+
   });
 
 
@@ -358,6 +365,26 @@ describe('Posting Details and Rendering in Resume', () => {
     cy.get('textarea[name="skills"]').should('have.value', 'React, JavaScript, Cypress');
 });
 
+it('should add profile picture', () => {
+  // Navigate to the page with the file input first
+  
+ 
+  // Attach the image to the file input
+  cy.get('input[type="file"]').attachFile('1038746.webp');
+  cy.contains(/update/i).click();
+  // Perhaps add a submit or save button action, if necessary
+  // cy.get('.submit-button').click();
+  
+  // Wait for a while (though it's usually better to wait for an action or API call to complete instead of hard coding a duration)
+  cy.wait(5000);
+ 
+  // Navigate to the resume page
+  cy.visit(`${url}/resume`);
+  cy.wait(5000);
+ 
+  // Assert that the image has been uploaded and is visible
+  cy.get('img').should('have.attr', 'src')
+});
 
 
 });
